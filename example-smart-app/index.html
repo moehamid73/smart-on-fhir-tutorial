@@ -77,7 +77,7 @@
 				*/
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(obvObj,idx){
-					if (typeof obvObj.valueQuantity === "object" || obvObj.valueQuantity === "string") {
+					if (typeof obvObj.valueQuantity === "object" || obvObj.text === "Vital Signs") {
 						retString += 
 							"<tr>"+
 								"<td>"+obvObj.code.text+"</td>"+
