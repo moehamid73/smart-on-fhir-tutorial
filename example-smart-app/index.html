@@ -38,14 +38,14 @@
 			var patientApi = smart.patient.api;
 			
 			patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
-				var retString = "<table class='dataTable'>";
+				var retString = "<ul'>";
 				response.forEach(function(banObj,idx){
 					retString += 
 							"<tr>"+
-								<td id='fname'>Moe</td>
+								<li>Moe</li>
 							"</tr>";
 				});
-				retString += "</table>";
+				retString += "</ul>";
 				document.getElementById("demoBannerDiv").innerHTML = retString;
 			});
 			
