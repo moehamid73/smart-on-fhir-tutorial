@@ -41,12 +41,12 @@
 			patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
 				var retString = "<ul'>";
 				response.forEach(function(banObj,idx){
-					try{
+					//try{
 					retString += 
 							"<li>"+
 								"<dt>"+banObj.resource.id+"</dt>"+
 							"</li>";
-					}catch(e){}
+					//}catch(e){}
 				});
 				retString += "</ul>";
 				document.getElementById("demoBannerDiv").innerHTML = retString;
