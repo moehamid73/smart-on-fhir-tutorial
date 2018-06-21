@@ -13,7 +13,7 @@
 	<link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
 	</head>
 	<body>
-		<h3> version 0.3 </h3>
+		<h3> version 0.2 </h3>
 		<!-- <div id="demoBannerDiv" class="dataDiv">Loading banner bar...</div> -->
 		<div id="medStatementDiv" class="dataDiv">Loading meds...</div>
 		<div id="allergyDiv" class="dataDiv">Loading allergies...</div>
@@ -43,7 +43,7 @@
 				response.forEach(function(banObj,idx){
 					retString += 
 							"<li>"+
-								<dt>banObj.identifier.text</dt>
+								"<dt>"+banObj.identifier.text+"</dt>"+
 							"</li>";
 				});
 				retString += "</ul>";
