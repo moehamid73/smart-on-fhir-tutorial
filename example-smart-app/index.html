@@ -13,8 +13,8 @@
 	<link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
 	</head>
 	<body>
-		<h3> version 0.2 </h3>
-		<!-- <div id="demoBannerDiv" class="dataDiv">Loading banner bar...</div> -->
+		<h3> version 0.1 </h3>
+		<div id="demoBannerDiv" class="dataDiv">Loading banner bar...</div>
 		<div id="medStatementDiv" class="dataDiv">Loading meds...</div>
 		<div id="allergyDiv" class="dataDiv">Loading allergies...</div>
 		<div id="obvDiv" class="dataDiv">Loading observations...</div>
@@ -41,10 +41,12 @@
 			patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
 				var retString = "<ul'>";
 				response.forEach(function(banObj,idx){
+					try{
 					retString += 
 							"<li>"+
 								"<dt>"+banObj.identifier.text+"</dt>"+
 							"</li>";
+					}catch(e){}
 				});
 				retString += "</ul>";
 				document.getElementById("demoBannerDiv").innerHTML = retString;
