@@ -36,14 +36,12 @@
 		if (typeof smart.patient === "object") {
 			var patientApi = smart.patient.api;
 			
-			patientApi.fetchAll({type: 'Patient'}).then(function(response) {
+			patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
 				var retString = "<table class='dataTable'>";
-				console.log('Outside Loop');
 				response.forEach(function(banObj,idx){
-					console.log('Inside Loop');
 					retString += 
 							"<tr>"+
-								"<td>"+banObj.identifier.text+" "+banObj.identifier.value+"</td>"+
+								<td id='fname'></td>
 							"</tr>";
 				});
 				retString += "</table>";
