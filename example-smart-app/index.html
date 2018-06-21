@@ -37,7 +37,7 @@
 		if (typeof smart.patient === "object") {
 			var patientApi = smart.patient.api;
 			
-			patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
+			/*patientApi.fetchAll({type: 'Encounter'}).then(function(response) {
 				var retString = "<ul'>";
 				response.forEach(function(banObj,idx){
 					retString += 
@@ -47,7 +47,7 @@
 				});
 				retString += "</ul>";
 				document.getElementById("demoBannerDiv").innerHTML = retString;
-			});
+			});*/
 			
 			
 			patientApi.fetchAll({type: 'MedicationStatement'}).then(function(response) {
