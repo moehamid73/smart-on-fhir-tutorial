@@ -35,6 +35,17 @@
 	function ready(smart) {
 		if (typeof smart.patient === "object") {
 			var patientApi = smart.patient.api;
+			
+			patientApi.fetchAll({type: 'Patient'}).then(function(response) {
+				var retString = "<table class='dataTable'>";
+				response.forEach(function(banObj,idx){
+					retString += "<tr><td>"+banObj.identifier.text+" "+ banObj.identifier.value</td></tr>";
+				});
+				retString += "</table>";
+				document.getElementById("demoBannerDiv").innerHTML = retString;
+			});
+			
+			
 			patientApi.fetchAll({type: 'MedicationStatement'}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(medObj,idx){
