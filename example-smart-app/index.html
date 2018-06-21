@@ -39,7 +39,10 @@
 			patientApi.fetchAll({type: 'Patient'}).then(function(response) {
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(banObj,idx){
-					retString += "<tr><td>"+banObj.identifier.text+" "+ banObj.identifier.value</td></tr>";
+					retString += 
+							"<tr>"+
+								"<td>"+banObj.identifier.text+" "+banObj.identifier.value+"</td>"+
+							"</tr>";
 				});
 				retString += "</table>";
 				document.getElementById("demoBannerDiv").innerHTML = retString;
@@ -88,7 +91,7 @@
 				*/
 				var retString = "<table class='dataTable'>";
 				response.forEach(function(obvObj,idx){
-					if (typeof obvObj.valueQuantity === "object" || obvObj.text === "Vital Signs") {
+					if (typeof obvObj.valueQuantity === "object") {
 						retString += 
 							"<tr>"+
 								"<td>"+obvObj.code.text+"</td>"+
